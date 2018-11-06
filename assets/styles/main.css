@@ -1,0 +1,68 @@
+body {
+  background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+}
+
+#main {
+  width: 900px;
+  background: #fff;
+  margin: 0 auto;
+  margin-top: 20px;
+  -webkit-box-shadow: -2px 2px 21px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: -2px 2px 21px 0px rgba(0,0,0,0.75);
+  box-shadow: -2px 2px 21px 0px rgba(0,0,0,0.75);
+}
+
+@media (max-width: 1000px) {
+  #main {
+    width: 700px;
+  }  
+}
+
+#main > div {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+
+#image {
+  width: 800px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 600px;
+  margin: 0 auto;
+  padding-top: 20px;
+  margin-bottom: 50px;
+
+}
+
+@media (max-width: 1000px) {
+  #image {
+    width: 600px;
+  }  
+}
+
+.arrows {
+  position: relative; 
+  margin: 0 auto; 
+  width: 100px;
+  margin-bottom: 100px;
+}
+
+#previous {
+  position: absolute; 
+  width: 32px;
+  height: 32px;
+  background: url('../images/left-arrow.png');
+  cursor: pointer;  
+}
+
+#next {
+  position: absolute; 
+  width: 32px;
+  height: 32px;
+  background: url('../images/right-arrow.png');
+  cursor: pointer;
+  right: 0;
+}
+
+
