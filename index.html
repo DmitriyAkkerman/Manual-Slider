@@ -3,25 +3,34 @@
 <head>
   <title>Manual slider</title>
   <meta charset="utf-8">
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon/favicon-32x32.png">
-  <link rel="stylesheet" href="assets/styles/main.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="stylesheet" href="assets/css/main.css">
 
 </head>
 
 <body>
   
-<div id="main">
-  <div>
-    <div id="image"></div>
-    <div class="arrows">
-      <div id="previous"></div>
-      <div id="next"></div>
-    </div>
+  <div class="manual-slider">
+    <img src="" alt="">
   </div>  
-</div> 
 
-<script src="assets/js/main.js"></script>
+<script src="assets/js/manual-slider.js"></script>
+
+<script>
+
+  document.addEventListener('DOMContentLoaded', function() {
+    new ManualSlider(
+        document.querySelector('.manual-slider'),
+        [
+          './assets/img/1.jpg',
+          './assets/img/2.jpg',
+          './assets/img/3.jpg'
+        ]
+    );
+  })
+
+</script>
   
 </body>
 </html>
