@@ -12,7 +12,9 @@
 <body>
   
   <div class="manual-slider">
-    <img src="" alt="">
+    <img src="./assets/img/1.jpg" alt="">
+    <img src="./assets/img/2.jpg" alt="">
+    <img src="./assets/img/3.jpg" alt="">
   </div>  
 
 <script src="assets/js/manual-slider.js"></script>
@@ -20,14 +22,7 @@
 <script>
 
   document.addEventListener('DOMContentLoaded', function() {
-    new ManualSlider(
-        document.querySelector('.manual-slider'),
-        [
-          './assets/img/1.jpg',
-          './assets/img/2.jpg',
-          './assets/img/3.jpg'
-        ]
-    );
+    new ManualSlider(document.querySelector('.manual-slider'));
   })
 
 </script>
