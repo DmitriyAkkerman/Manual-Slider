@@ -19,26 +19,6 @@ class ManualSlider {
     this.images[this.count].classList.add('current')
   }
 
-  slidePrev() {
-    this.count--;
-
-    if (this.count < 0) {
-      this.count = this.images.length - 1;
-    }
-
-    this.setCurrent(this.images[this.count]);
-  }
-
-  slideNext() {
-    this.count++;
-
-    if (this.count > this.images.length - 1) {
-      this.count = 0;
-    }
-
-    this.setCurrent(this.images[this.count]);
-  }
-
   initNav() {
     let nav = document.createElement('div');
     nav.classList.add('nav');
@@ -59,5 +39,25 @@ class ManualSlider {
     that.el.querySelector('.next').addEventListener('click', function() {
       that.slideNext();
     });
+  }
+
+  slidePrev() {
+    this.count--;
+
+    if (this.count < 0) {
+      this.count = this.images.length - 1;
+    }
+
+    this.setCurrent(this.images[this.count]);
+  }
+
+  slideNext() {
+    this.count++;
+
+    if (this.count > this.images.length - 1) {
+      this.count = 0;
+    }
+
+    this.setCurrent(this.images[this.count]);
   }
 }
