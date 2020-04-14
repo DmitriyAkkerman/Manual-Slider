@@ -12,24 +12,21 @@
   transition: opacity .7s ease;
 }
 
-.simple-slider > .nav {
-  position: absolute;
-  left: 50%;
-  bottom: 50px;
-  transform: translateX(-50%);
-  width: 80px;
-}
-
 .simple-slider > .nav > .previous,
 .simple-slider > .nav > .next {
-  width: 30px;
-  height: 30px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
 }
 
 .simple-slider > .nav > .previous {
+  left: 0;
   background: url('../img/prev.svg');
 }
 
 .simple-slider > .nav > .next {
+  right: 0;
   background: url('../img/next.svg');
 }
