@@ -6,6 +6,7 @@ class ManualSlider {
     }
 
     this.el = el;
+    this.el.classList.add('simple-slider');
     this.count = 0;
     this.images = this.el.querySelectorAll('img');
     this.images[0].classList.add('current');
@@ -16,7 +17,7 @@ class ManualSlider {
 
   setCurrent() {
     this.el.querySelector(".current").classList.remove('current');
-    this.images[this.count].classList.add('current')
+    this.images[this.count].classList.add('current');
   }
 
   initNav() {
