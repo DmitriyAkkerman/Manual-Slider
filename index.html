@@ -22,7 +22,11 @@
 <script>
 
   document.addEventListener('DOMContentLoaded', function() {
-    new SimpleSlider(document.querySelector('.my-slider'));
+    new SimpleSlider({
+      el: document.querySelector('.my-slider'),
+      autoplay: true,
+      autoplayDelay: 1000
+    });
   })
 
 </script>

@@ -1,11 +1,11 @@
 class SimpleSlider {
-  constructor(el, options = {}) {
+  constructor(options = {}) {
 
-    if(!el) {
+    if(!options.el) {
       throw new Error('Specify root selector')
     }
 
-    this.el = el;
+    this.el = options.el;
     this.el.classList.add('simple-slider');
     this.images = this.el.querySelectorAll('img');
     this.images[0].classList.add('current');
@@ -27,8 +27,8 @@ class SimpleSlider {
     let that = this;
 
     if(!that.autoplay) {
-      that.el.querySelector(".current").classList.remove('current');
-      that.images[that.count].classList.add('current');
+      this.el.querySelector(".current").classList.remove('current');
+      this.images[that.count].classList.add('current');
     }
     else {
       that.timer = setInterval(function() {
@@ -75,6 +75,7 @@ class SimpleSlider {
   }
 
   slideNext(count) {
+
     let that = this;
 
     if(!that.autoplay) {
@@ -87,10 +88,10 @@ class SimpleSlider {
       this.setCurrentSlide(this.images[this.count]);
     }
     else {
-      let currentSlide = that.images[count];
+      let currentSlide = this.images[count];
       currentSlide.classList.add('current');
 
-      that.images.forEach(function(image, count, images) {
+      this.images.forEach(function(image, count, images) {
         let slide = images[count];
         if( slide !== currentSlide ) {
           slide.classList.remove('current')
