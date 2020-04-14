@@ -1,25 +1,29 @@
 .simple-slider > img {
-  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  opacity: 0;
 }
 
 .simple-slider > img.current {
-  display: inline-block;
+  opacity: 1;
+  transition: opacity .7s ease;
 }
 
 .simple-slider > .nav {
-  display: flex;
-  justify-content: space-between;
-  width: 50px;
-  margin: 0 auto;
-  margin-top: 20px;
+  position: absolute;
+  left: 50%;
+  bottom: 50px;
+  transform: translateX(-50%);
+  width: 80px;
 }
 
 .simple-slider > .nav > .previous,
 .simple-slider > .nav > .next {
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   border: none;
   cursor: pointer;
   outline: none;

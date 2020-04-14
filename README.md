@@ -17,5 +17,10 @@
 4.Initialization. Init slider by specifying the root selector inside slider app generation.
   
        document.addEventListener('DOMContentLoaded', function() {
-        new ManualSlider(document.querySelector('.my-slider'));
+        new SimpleSlider(document.querySelector('.my-slider'));
        })
+
+5. Options:        
+    
+        autoplay: false/true,
+        autoplayDelay: 2500

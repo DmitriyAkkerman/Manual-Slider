@@ -1,5 +1,5 @@
-class ManualSlider {
-  constructor(el) {
+class SimpleSlider {
+  constructor(el, options = {}) {
 
     if(!el) {
       throw new Error('Specify root selector')
@@ -7,17 +7,39 @@ class ManualSlider {
 
     this.el = el;
     this.el.classList.add('simple-slider');
-    this.count = 0;
     this.images = this.el.querySelectorAll('img');
     this.images[0].classList.add('current');
+    this.count = 0;
+    this.autoplay = options.autoplay || false;
+    this.autoplayDelay = options.autoplayDelay || 2500;
 
-    this.initNav();
-    this.navEvents();
+    if(!this.autoplay) {
+      this.initNav();
+      this.navEvents();
+    }
+    else {
+      this.setCurrentSlide();
+    }
   }
 
-  setCurrent() {
-    this.el.querySelector(".current").classList.remove('current');
-    this.images[this.count].classList.add('current');
+  setCurrentSlide() {
+
+    let that = this;
+
+    if(!that.autoplay) {
+      that.el.querySelector(".current").classList.remove('current');
+      that.images[that.count].classList.add('current');
+    }
+    else {
+      that.timer = setInterval(function() {
+        that.count++;
+        if( that.count == that.images.length ) {
+          that.count = 0;
+        }
+        that.slideNext(that.count);
+
+      }, that.autoplayDelay);
+    }
   }
 
   initNav() {
@@ -49,16 +71,31 @@ class ManualSlider {
       this.count = this.images.length - 1;
     }
 
-    this.setCurrent(this.images[this.count]);
+    this.setCurrentSlide(this.images[this.count]);
   }
 
-  slideNext() {
-    this.count++;
+  slideNext(count) {
+    let that = this;
 
-    if (this.count > this.images.length - 1) {
-      this.count = 0;
+    if(!that.autoplay) {
+      this.count++;
+
+      if (this.count > this.images.length - 1) {
+        this.count = 0;
+      }
+
+      this.setCurrentSlide(this.images[this.count]);
     }
+    else {
+      let currentSlide = that.images[count];
+      currentSlide.classList.add('current');
 
-    this.setCurrent(this.images[this.count]);
+      that.images.forEach(function(image, count, images) {
+        let slide = images[count];
+        if( slide !== currentSlide ) {
+          slide.classList.remove('current')
+        }
+      })
+    }
   }
 }
