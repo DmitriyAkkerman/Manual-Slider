@@ -24,9 +24,6 @@
 .simple-slider > .nav > .next {
   width: 30px;
   height: 30px;
-  border: none;
-  cursor: pointer;
-  outline: none;
 }
 
 .simple-slider > .nav > .previous {
